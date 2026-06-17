@@ -1,0 +1,32 @@
+{:paths ["src"]
+ ;; Depends on raster (the typed-dispatch compiler + numeric/array/linalg/par
+ ;; substrate). During development raster is a sibling checkout; pin a git or
+ ;; maven coordinate for release. NOTE: needs a raster checkout that contains the
+ ;; raster.{knn,tausworthe,spatial,umap-substrate} layer (feature/umap-clustering
+ ;; or later, once merged to raster's main line).
+ :deps {io.github.whilo/raster {:local/root "../raster"}}
+
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :jvm-opts ["--enable-native-access=ALL-UNNAMED"
+                    "--add-modules=jdk.incubator.vector"
+                    "-Xss8m"
+                    "-XX:ReservedCodeCacheSize=512m"]
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}
+
+  ;; Run on the Valhalla JDK (raster's deftm kernels need --enable-preview etc.).
+  ;; See raster's README for JDK setup. Mirrors raster's :valhalla jvm-opts
+  ;; (minus the raster-internal "classes" AOT path).
+  :valhalla {:jvm-opts ["-XX:ReservedCodeCacheSize=512m"
+                        "-Xmx12g"
+                        "--enable-preview"
+                        "--add-exports" "java.base/jdk.internal.vm.annotation=ALL-UNNAMED"
+                        "--add-exports" "java.base/jdk.internal.classfile.components=ALL-UNNAMED"
+                        "--add-exports" "java.base/jdk.internal.classfile.impl=ALL-UNNAMED"
+                        "--add-modules" "jdk.incubator.vector"]}
+
+  :dev {:extra-paths ["dev" "test"]
+        :extra-deps {criterium/criterium {:mvn/version "0.4.6"}}}}}
