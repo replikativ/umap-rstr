@@ -1,8 +1,8 @@
 (ns umap.rstr
   "End-to-end UMAP: kNN -> fuzzy simplicial set -> low-dim init -> SGD layout.
 
-  A thin orchestrator (plain defn) over the deftm kernels in raster.umap,
-  raster.umap.{knn,graph,spectral} and raster.spatial.nndescent. Python+numba
+  A thin orchestrator (plain defn) over the deftm kernels in
+  umap.rstr.{layout,graph,spectral}, raster.knn and raster.spatial.nndescent. Python+numba
   UMAP (umap.umap_.UMAP / simplicial_set_embedding) is the gold standard.
 
   Pipeline (mirrors umap.umap_):
