@@ -1,4 +1,4 @@
-(ns umap.rstr.devirt-test
+(ns umap.devirt-test
   "Gate against type-transport regressions on the LAZY-JIT path for the UMAP-layer
   hot kernels. A deftm's lazy-JIT code is exactly the walker's output; if a binding
   fails to type, consuming ops stay runtime-dispatched (~270ns vs ~4ns), silently
@@ -7,8 +7,8 @@
   (:require [clojure.test :refer [deftest testing is]]
             [raster.tooling.inspect :as inspect]
             [raster.compiler.pipeline :as pipeline]
-            [umap.rstr.layout :as layout]
-            [umap.rstr.graph :as graph]))
+            [umap.layout :as layout]
+            [umap.graph :as graph]))
 
 (def ^:private get-walked-body @#'pipeline/get-walked-body)
 

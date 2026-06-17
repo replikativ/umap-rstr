@@ -1,0 +1,23 @@
+umap-rstr
+=========
+
+This product is a derivative work: a Clojure port, built on the raster
+typed-dispatch compiler, of UMAP (Uniform Manifold Approximation and
+Projection).
+
+The original algorithm and its reference implementation, umap-learn, are:
+
+    Copyright (c) 2017, Leland McInnes
+    https://github.com/lmcinnes/umap
+    BSD 3-Clause License
+
+McInnes, L., Healy, J., & Melville, J. (2018). UMAP: Uniform Manifold
+Approximation and Projection for Dimension Reduction. arXiv:1802.03426.
+
+The Clojure / raster port in this repository is:
+
+    Copyright (c) 2026, Christian Weilbach
+
+and is released under the same BSD 3-Clause License (see LICENSE). It is an
+independent reimplementation that follows umap-learn's algorithm and numerical
+behaviour; it is not endorsed by or affiliated with the original authors.

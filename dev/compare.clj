@@ -5,7 +5,7 @@
   Dataset selected via the DS env var (mnist|fashion|...). Reads C-order .npy via
   the fortran-aware npy loader. Run:
     DS=fashion clojure -M:valhalla -e '(load-file \"dev/umap_port/compare.clj\")'"
-  (:require [umap.rstr :as fit]
+  (:require [umap :as fit]
             [raster.spatial.nndescent :as nnd]
             [clojure.set :as set]))
 (load-file "dev/npy.clj")

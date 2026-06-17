@@ -1,9 +1,9 @@
-(ns umap.rstr-test
+(ns umap-test
   "End-to-end UMAP fit: well-separated high-dim Gaussian blobs must map to
   well-separated 2D clusters. UMAP layout is chaotically sensitive, so we test
   at the quality level (2D nearest-neighbor label agreement), not coordinates."
   (:require [clojure.test :refer [deftest testing is]]
-            [umap.rstr :as fit]))
+            [umap :as fit]))
 
 (defn- blobs
   "n points in `dim` dims drawn from `nc` well-separated Gaussian blobs.

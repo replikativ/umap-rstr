@@ -21,10 +21,24 @@ Validated against `umap-learn` on MNIST-70k and Fashion-MNIST-70k (cosine):
 Trustworthiness matches; wall-clock is faster (incl. cold JVM/JIT). See
 `dev/` for the reproducible comparison harness.
 
+## Installation
+
+raster depends on a typedclojure fork via git, and git deps resolve transitively
+only through `deps.edn` (not a Maven POM), so pin this lib as a git dependency:
+
+```clojure
+io.github.replikativ/umap-rstr
+{:git/url "https://github.com/replikativ/umap-rstr"
+ :git/sha "<sha>"}
+```
+
+(Once typedclojure ships its fixes in a Maven release upstream, this moves to a
+`org.replikativ/umap-rstr {:mvn/version "..."}` Clojars coordinate.)
+
 ## Usage
 
 ```clojure
-(require '[umap.rstr :as umap])
+(require '[umap :as umap])
 
 ;; X: flat row-major double[] (or float[]) of n*dim
 (def result (umap/fit X n dim :k 15 :metric :cosine :init :auto :seed 42))
@@ -37,10 +51,10 @@ Options: `:k` (neighbors, 15), `:out-dim` (2), `:n-epochs` (auto 500/200),
 
 ## Namespaces
 
-- `umap.rstr` — public `fit` orchestrator
-- `umap.rstr.layout` — negative-sampled SGD (the hot kernel)
-- `umap.rstr.graph` — fuzzy simplicial set (smooth-knn-dist, membership, symmetrize)
-- `umap.rstr.spectral` — spectral init (matrix-free Lanczos, disconnected-graph handling)
+- `umap` — public `fit` orchestrator
+- `umap.layout` — negative-sampled SGD (the hot kernel)
+- `umap.graph` — fuzzy simplicial set (smooth-knn-dist, membership, symmetrize)
+- `umap.spectral` — spectral init (matrix-free Lanczos, disconnected-graph handling)
 
 kNN / RP-trees / Tausworthe RNG live in raster (`raster.knn`,
 `raster.spatial.*`, `raster.tausworthe`) since they're shared with clustering.
@@ -56,4 +70,13 @@ clojure -M:valhalla:test          # run tests
 
 ## License
 
-Same as raster.
+BSD 3-Clause (see `LICENSE` and `NOTICE`).
+
+umap-rstr is a derivative work — a Clojure / raster port of
+[umap-learn](https://github.com/lmcinnes/umap) (© 2017 Leland McInnes, BSD
+3-Clause). It follows umap-learn's algorithm and numerical behaviour but is an
+independent reimplementation, not endorsed by or affiliated with the original
+authors. The port is © 2026 Christian Weilbach, released under the same license.
+
+> McInnes, L., Healy, J., & Melville, J. (2018). UMAP: Uniform Manifold
+> Approximation and Projection for Dimension Reduction. arXiv:1802.03426.

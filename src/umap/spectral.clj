@@ -1,4 +1,4 @@
-(ns umap.rstr.spectral
+(ns umap.spectral
   "Spectral initialization — the dim smallest non-trivial eigenvectors of the
   normalized graph Laplacian L = I - D^-1/2 A D^-1/2 (umap.spectral.spectral_layout).
 

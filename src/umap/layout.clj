@@ -1,4 +1,4 @@
-(ns umap.rstr.layout
+(ns umap.layout
   "UMAP embedding layout optimization — a faithful port of
   umap.layouts.optimize_layout_euclidean (Python+numba is the gold standard).
 

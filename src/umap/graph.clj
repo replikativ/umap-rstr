@@ -1,4 +1,4 @@
-(ns umap.rstr.graph
+(ns umap.graph
   "Fuzzy simplicial set construction — ports umap.umap_.smooth_knn_dist and
   compute_membership_strengths (the per-point numeric kernels are deftm), plus
   the t-conorm symmetrization (graph bookkeeping, plain Clojure for now).

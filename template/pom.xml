@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <version>template</version>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.replikativ</groupId>
+    <artifactId>umap-rstr</artifactId>
+    <packaging>jar</packaging>
+    <name>umap-rstr</name>
+    <description>UMAP (Uniform Manifold Approximation and Projection) for Clojure — a faithful port of umap-learn built on the raster typed-dispatch compiler.</description>
+    <licenses>
+        <license>
+            <name>BSD 3-Clause License</name>
+            <url>https://opensource.org/licenses/BSD-3-Clause</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git:git@github.com:replikativ/umap-rstr.git</connection>
+        <developerConnection>scm:git:git@github.com/replikativ/umap-rstr.git</developerConnection>
+        <url>https://github.com/replikativ/umap-rstr</url>
+    </scm>
+</project>

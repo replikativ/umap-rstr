@@ -1,11 +1,11 @@
-(ns umap.rstr.spectral-test
+(ns umap.spectral-test
   "Spectral initialization: the matrix-free Lanczos path (large n) and the dense
   eigh path (tiny n) must both produce a valid bottom-of-Laplacian embedding.
   We test at the structural level — the first non-trivial eigenvector (Fiedler
   vector) must separate two weakly-coupled graph components by sign — since the
   eigenbasis is only defined up to sign/rotation within degenerate subspaces."
   (:require [clojure.test :refer [deftest testing is]]
-            [umap.rstr.spectral :as sp]))
+            [umap.spectral :as sp]))
 
 (defn- components
   "Run the union-find connected-components kernels on an undirected edge list.
