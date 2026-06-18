@@ -1,8 +1,10 @@
 # umap-rstr
 
 UMAP (Uniform Manifold Approximation and Projection) for Clojure, built on
-[raster](../raster) — typed multiple dispatch with devirtualizing bytecode
-compilation. The `.rstr` suffix marks the raster substrate (à la Julia's `.jl`).
+[raster](https://github.com/replikativ/raster) — typed multiple dispatch with
+devirtualizing bytecode compilation. The `-rstr` suffix in the repo/artifact name
+(`umap-rstr`) marks the raster substrate, à la Julia's `.jl` repo suffix; the
+namespace you require is just `umap`.
 
 A faithful port of `umap-learn` (Python+numba is the gold standard): cosine/
 euclidean kNN → fuzzy simplicial set → spectral/random init → negative-sampled
@@ -20,6 +22,13 @@ Validated against `umap-learn` on MNIST-70k and Fashion-MNIST-70k (cosine):
 
 Trustworthiness matches; wall-clock is faster (incl. cold JVM/JIT). See
 `dev/` for the reproducible comparison harness.
+
+Embeddings side-by-side (left: umap-rstr, right: umap-learn), coloured by the
+true class label:
+
+![MNIST: umap-rstr vs umap-learn](img/mnist_compare.png)
+
+![Fashion-MNIST: umap-rstr vs umap-learn](img/fashion_compare.png)
 
 ## Installation
 

@@ -5,3 +5,4 @@
 *.png
 /.lsp
 /.calva
+!/img/*.png
