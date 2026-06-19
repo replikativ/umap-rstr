@@ -12,7 +12,7 @@
  ;; For local development the :dev alias overrides this with a sibling checkout.
  :deps {io.github.replikativ/raster
         {:git/url "https://github.com/replikativ/raster"
-         :git/sha "43cb8ab9f0f9f6ef82b08a233bde41d64be75a09"}}
+         :git/sha "abebcb63ef88e5f77e9dcfcb370eb366594e7aca"}}
 
  :aliases
  {:test {:extra-paths ["test"]
