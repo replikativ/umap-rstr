@@ -12,7 +12,7 @@
  ;; For local development the :dev alias overrides this with a sibling checkout.
  :deps {io.github.replikativ/raster
         {:git/url "https://github.com/replikativ/raster"
-         :git/sha "abebcb63ef88e5f77e9dcfcb370eb366594e7aca"}}
+         :git/sha "64942069723eca6aa1a9c49c547a5d3b4f6de088"}}
 
  :aliases
  {:test {:extra-paths ["test"]
@@ -43,7 +43,7 @@
 
   :build {:deps {io.github.clojure/tools.build          {:mvn/version "0.10.6"}
                  slipset/deps-deploy                    {:mvn/version "0.2.2"}
-                 io.github.borkdude/gh-release-artifact {:git/sha "b946558225a7839f6a0f644834e838e190dc2262"}
+                 io.github.borkdude/gh-release-artifact {:git/sha "64942069723eca6aa1a9c49c547a5d3b4f6de088"}
                  babashka/babashka.curl                 {:mvn/version "0.1.2"}
                  babashka/fs                            {:mvn/version "0.3.17"}
                  cheshire/cheshire                      {:mvn/version "5.11.0"}}
