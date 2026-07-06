@@ -1,18 +1,10 @@
 {:paths ["src"]
  ;; Depends on raster (the typed-dispatch compiler + numeric/array/linalg/par
  ;; substrate, incl. the raster.{knn,tausworthe,spatial} approximate-NN layer).
- ;;
- ;; Pinned to a git coordinate (not Clojars): raster itself depends on the
- ;; typedclojure fork via git, and git deps resolve transitively only through
- ;; deps.edn — not through a Maven POM. This sha is the integration-TC commit on
- ;; raster's feature/tc-ast-binding-types branch (its deps.edn pins the
- ;; typedclojure fork @ ea66226f7). When typedclojure ships a Maven release
- ;; upstream, flip raster (and this lib) to :mvn/version coordinates.
- ;;
+ ;; raster is on Clojars (Maven-resolvable since 0.2.x — TypedClojure is released,
+ ;; so raster's POM declares it as a proper mvn dep).
  ;; For local development the :dev alias overrides this with a sibling checkout.
- :deps {io.github.replikativ/raster
-        {:git/url "https://github.com/replikativ/raster"
-         :git/sha "64942069723eca6aa1a9c49c547a5d3b4f6de088"}}
+ :deps {org.replikativ/raster {:mvn/version "0.2.258"}}
 
  :aliases
  {:test {:extra-paths ["test"]
@@ -38,12 +30,12 @@
 
   ;; Local development: use a sibling raster checkout instead of the pinned sha.
   :dev {:extra-paths ["dev" "test"]
-        :extra-deps {io.github.replikativ/raster {:local/root "../raster"}
+        :extra-deps {org.replikativ/raster {:local/root "../raster"}
                      criterium/criterium {:mvn/version "0.4.6"}}}
 
   :build {:deps {io.github.clojure/tools.build          {:mvn/version "0.10.6"}
                  slipset/deps-deploy                    {:mvn/version "0.2.2"}
-                 io.github.borkdude/gh-release-artifact {:git/sha "64942069723eca6aa1a9c49c547a5d3b4f6de088"}
+                 io.github.borkdude/gh-release-artifact {:git/sha "b946558225a7839f6a0f644834e838e190dc2262"}
                  babashka/babashka.curl                 {:mvn/version "0.1.2"}
                  babashka/fs                            {:mvn/version "0.3.17"}
                  cheshire/cheshire                      {:mvn/version "5.11.0"}}
