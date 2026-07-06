@@ -1,5 +1,9 @@
 # umap-rstr
 
+[![Clojars Project](https://img.shields.io/clojars/v/org.replikativ/umap-rstr.svg)](https://clojars.org/org.replikativ/umap-rstr)
+[![CircleCI](https://circleci.com/gh/replikativ/umap-rstr.svg?style=shield)](https://circleci.com/gh/replikativ/umap-rstr)
+[![Slack](https://img.shields.io/badge/slack-join_chat-brightgreen.svg)](https://clojurians.slack.com/archives/C09622F337D)
+
 UMAP (Uniform Manifold Approximation and Projection) for Clojure, built on
 [raster](https://github.com/replikativ/raster) — typed multiple dispatch with
 devirtualizing bytecode compilation. The `-rstr` suffix in the repo/artifact name
